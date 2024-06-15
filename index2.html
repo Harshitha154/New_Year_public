@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <h4 id="con">May all your sadness and worries</h4>
+    <div class="gallery-wrap">
+        <img src="previous.png" id="backBtn">
+    <div class="gallery">
+        <div >
+         <span> <img src="bear1.jpg"></span>
+         <span><img src="bear2.jpg"></span>
+         <span ><img src="bear3.jpg"></span>
+         </div>
+         
+         <div>
+            
+            <span> <img src="happybear1.JPG"></span>
+            <span><img src="happybear2.jpg"></span>
+            <span ><img src="happy bear3.jpg"></span>
+        </div> 
+    </div>
+    <img src="next.png" id="nextBtn">
+   
+    </div>
+    <button  onclick="move()" id="ny" style="width:80px;padding:20px;margin-left:550px;background-color: black;color: aquamarine;
+    border-radius: 5px;height:30px;padding: 10px;text-align: center;">Tap</button>
+    <script>
+      
+        let scrollcontainer=document.querySelector(".gallery");
+        let backBtn=document.getElementById("backBtn");
+        let nextBtn=document.getElementById("nextBtn");
+        let c=document.getElementById("con");
+        scrollcontainer.addEventListener("wheel",(evt)=>
+        {
+            evt.preventDefault();
+            scrollcontainer.scrollLeft+=evt.deltaY;
+
+        });
+        nextBtn.addEventListener("click",()=>
+        {
+            scrollcontainer.style.scrollBehavior="smooth";
+            scrollcontainer.scrollLeft+=900;
+            c.innerHTML="turn into joy and happiness"
+
+        })
+        backBtn.addEventListener("click",()=>
+        { 
+            scrollcontainer.scrollLeft-=900;
+            c.innerHTML="May all your Sadness and worries"
+        })
+        
+        function move(){
+            var r1='index.html';
+        window.location.href=r1;
+        }
+    
+    </script>
+</body>
+</html>
